@@ -5,19 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node twilio.js"
+    "start": "node twilio.js"
   },
   "keywords": [
     "heroku"
   ],
-  "dependencies":{
-	"express":"*",
+  "dependencies": {
+    "express": "*",
+    "sequelize": "^5.15.0",
     "twilio": "^3.30.0"
-	},
-  "engines":{
-	"node":"10.16.0",
-	"npm":"6.9.2"
-	},
+  },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.2"
+  },
   "author": "",
   "license": "ISC"
 }
