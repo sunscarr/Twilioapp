@@ -1,25 +1,18 @@
 {
-  "name": "twilio_file",
+  "name": "ootl-server",
   "version": "1.0.0",
   "description": "",
-  "main": "twilio.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node twilio.js"
   },
-  "keywords": [
-    "heroku"
-  ],
-  "dependencies": {
-    "express": "*",
-    "sequelize": "^5.15.0",
-    "twilio": "^3.30.0",
-    "dotenv": "^7.0.0"
-  },
-  "engines": {
-    "node": "10.16.0",
-    "npm": "6.9.2"
-  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "twilio": "^3.30.0"
+  }
 }
