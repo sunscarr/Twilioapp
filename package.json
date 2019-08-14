@@ -14,7 +14,7 @@
     "express": "*",
     "sequelize": "^5.15.0",
     "twilio": "^3.30.0",
-    "dotenv": "^7.0.0",
+    "dotenv": "^7.0.0"
   },
   "engines": {
     "node": "10.16.0",
