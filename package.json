@@ -1,0 +1,23 @@
+{
+  "name": "js_files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node twilio.js"
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "dependencies":{
+	"express":"*",
+    "twilio": "^3.30.0"
+	},
+  "engines":{
+	"node":"10.16.0",
+	"npm":"6.9.2"
+	},
+  "author": "",
+  "license": "ISC"
+}
