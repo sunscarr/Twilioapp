@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 //const jsonfile = require('../city_list.json');
 const apiKey= 'e81fb5cb36b485a64aa97c601e1bae2f';
 const request = require("request");
-const music = require("./musicdir");
+//const music = require("./musicdir");
 const exchange = require("./currency")
 const fs = require("fs");
 const weather = require("./weather");
@@ -29,13 +29,6 @@ for(i in array) {
     curlist.push(array[i]);
 }
 
-for(var i=0; i<jsonfile.length; i++){
-  city_list.push(jsonfile[i].name.toUpperCase());
-}
-
-for(var i=0; i<jsonfile.length; i++){
-  cnt_list.push(jsonfile[i].country);
-}
 
 
 const app = express();
@@ -46,7 +39,7 @@ app.post('/sms', async(req, res) => {
   console.log(cnt);
   var body = req.body.Body.trim();
 
-
+/*
    if (body.toUpperCase().trim() == "SONGS"){
      songtt=true;
     res.send(`<Response><Message> What genre of songs are you looking for? Eg (Chill, Hip hop, Rock, Pop, etc)</Message></Response>`);
@@ -185,7 +178,9 @@ Their links are: ` + allinklist+` </Message></Response>`);
     else if (body.toUpperCase().trim() == "COUNTRY"  && songtt==true){
       res.send(`<Response><Message> Here's Hot Country Hits playlist for you: https://spoti.fi/2JR6K1v   </Message></Response>`);
     }
-else if(body.toUpperCase().trim() == "WEATHER"){
+
+    */
+ if(body.toUpperCase().trim() == "WEATHER"){
   encity=true;
     res.send(`<Response><Message> Enter the name of the city </Message></Response>`);
   }
