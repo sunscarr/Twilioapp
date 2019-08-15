@@ -33,7 +33,7 @@ for(i in array) {
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
-app.post('/sms', async(req, res) => {
+app.post('/', async(req, res) => {
   console.log(req.body.Body);
   console.log(city);
   console.log(cnt);
