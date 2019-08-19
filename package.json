@@ -1,5 +1,5 @@
 {
-  "name": "ootl-server",
+  "name": "twilio_files",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "axios": "^0.18.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
-    "twilio": "^3.30.0"
+    "twilio": "^3.30.0",
+    "ngrok": "2.3.30"
   }
 }
