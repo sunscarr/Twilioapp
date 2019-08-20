@@ -248,6 +248,8 @@ Their links are: ` + allinklist+` </Message></Response>`);
     res.send(`<Response><Message> Enter your country code </Message></Response>`);
   }
 }
+
+
 */
 else if(body.toUpperCase().trim()=="CURRENCY"){
   res.send(`<Response><Message> Enter the name of the currency you want to convert from, the currency you want to convert to, and the amount you want to convert, all followed by a space. If you don't know the name of your currencies, enter 'CN'</Message></Response>`);
