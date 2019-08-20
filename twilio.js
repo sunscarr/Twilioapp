@@ -292,4 +292,4 @@ http.createServer(app).listen(1337, () => {
   console.log('Express server listening on port 1337');
 });
 */
-app.listen(process.env.PORT, () => console.log("listening"));
+app.listen(process.env.PORT || 1337, () => console.log("listening"));
