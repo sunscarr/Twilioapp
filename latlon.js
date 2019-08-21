@@ -10,8 +10,8 @@ function uslonglat(city, state, country, callback){
     for(i in body.results){
       var bod=body.results[i];
       if(bod.components._type == "city"){
-        if(bod.components.city.toUpperCase()== city.toUpperCase() && bod.components.country.toUpperCase()== country.toUpperCase() && bod.components.state_code.toUpperCase()== state.toUpperCase() ){
-          callback(bod.geometry.lat+" "+bod.geometry.lng);
+        if(bod.components.city.toUpperCase()== city.toUpperCase().trim() && bod.components.country.toUpperCase()== country.toUpperCase().trim() && bod.components.state_code.toUpperCase()== state.toUpperCase().trim() ){
+           callback(bod.geometry.lat+" "+bod.geometry.lng);
           break;
         }
       }
@@ -35,25 +35,22 @@ function getlonglat(city, country, callback){
     if(body.total_results ==0){
       callback("Couldn't find, try again")
     }
+    loop1:
     for(i in body.results){
       var bod=body.results[i];
-      if(bod.components._type == "city" || bod.components._type== "state" || bod.components._type=="county" || bod.components._type=="town"){
-        if((bod.components.state.toUpperCase()== city.toUpperCase()  && bod.components.country.toUpperCase()== country.toUpperCase() )){
-          callback(bod.geometry.lat+" "+bod.geometry.lng);
-          break;
-        }
-        else if (bod.components.city.toUpperCase()==city.toUpperCase() && bod.components.country.toUpperCase()== country.toUpperCase()) {
-          callback(bod.geometry.lat+" "+bod.geometry.lng);
-          break;
-        }
-        else if(bod.components.county.toUpperCase() ==city.toUpperCase()&& bod.components.country.toUpperCase()== country.toUpperCase()){
-          callback(bod.geometry.lat+" "+bod.geometry.lng);
-          break;
-        }
-        else if (bod.components.town.toUpperCase()== city.toUpperCase()&& bod.components.country.toUpperCase()== country.toUpperCase()) {
-          callback(bod.geometry.lat+" "+bod.geometry.lng);
-          break;
-        }
+      loop2:
+        for(j in bod.components){
+          var com= bod.components[j];
+          console.log("search is: "+com.toUpperCase());
+          console.log("city is "+ city.toUpperCase());
+          console.log("country is "+ country.toUpperCase());
+
+          if (com.toUpperCase() == city.toUpperCase().trim() && bod.components.country.toUpperCase()== country.toUpperCase().trim()){
+            console.log("final is: "+com.toUpperCase());
+            console.log("final city is "+ city.toUpperCase());
+             callback(bod.geometry.lat+" "+bod.geometry.lng);
+            break loop1;
+          }
         }
 
 
