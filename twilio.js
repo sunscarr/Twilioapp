@@ -280,7 +280,7 @@ If you see your currency, then enter the currency you want to convert from, the 
 else{
   songtt=false;
 //  console.log(body.toUpperCase().split()[0]+body.toUpperCase().split()[1])
-  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies or songs to get playlist recommendation </Message></Response>`)
+  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies. </Message></Response>`)
 }
   //const twiml = new MessagingResponse();
 
