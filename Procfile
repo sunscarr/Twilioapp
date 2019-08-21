@@ -1,1 +1,1 @@
-web: with_ngrok node twilio.js
+web: node twilio.js
