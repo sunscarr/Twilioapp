@@ -320,8 +320,8 @@ else if(ratu ==true){
 }
 else if(ordu ==true){
   ordu =false;
-  sort = body.split(" ")[0];
-  order = body.split(" ")[1];
+  sort = body.split(" ")[0].toLowerCase();
+  order = body.split(" ")[1].toLowerCase();
   if(statelist.includes(cnt.toUpperCase())){
     zomato.getuscityid(city, cnt, "USA", function(bd){
       zomato.searchrestaurant(bd, cate, range, rate, 5, sort, order, function(ppp){
