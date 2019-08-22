@@ -9,10 +9,21 @@ const request = require("request");
 const exchange = require("./currency")
 const fs = require("fs");
 const weather = require("./weather");
+const zomato = require("./zomato")
 
+var ordu=false;
+var restu=false;
+var restc=false;
+var catu=false;
+var ratu=false;
 var statelist=["AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MP", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UM", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
 encity=false;
 encountry=false;
+var cate="";
+var sort="";
+var order="";
+var range = "";
+var rate ="";
 var city="";
 var cnt = "";
 var state="";
@@ -276,6 +287,58 @@ If you see your currency, then enter the currency you want to convert from, the 
 
     }
 
+else if (body.toUpperCase().trim()=="RESTAURANT" || body.toUpperCase().trim()=="RESTAURANTS"){
+  restu = true;
+  res.send(`<Response><Message> Enter the name of the city you want to search restaurants at</Message></Response>`);
+
+}
+else if(restu ==true){
+  city = body;
+  restu=false;
+  res.send(`<Response><Message> Enter the name of the country (if its USA, just enter the name of the state) </Message></Response>`);
+  restc=true;
+
+}
+else if(restc == true){
+  restc=false;
+  cnt = body;
+  res.send(`<Response><Message> Enter the type or category of food you are looking for </Message></Response>`);
+  catu=true;
+}
+else if(catu==true){
+  catu=false;
+  cate=body;
+  ratu=true;
+  res.send(`<Response><Message> Enter the price range(1-5) and the rating(1-5) you are looking for, followed by a space </Message></Response>`);
+}
+else if(ratu ==true){
+  ratu=false;
+  range = body.split(" ")[0];
+  rate = body.split(" ")[1];
+  res.send(`<Response><Message> Enter how you want to sort the results (cost or rating) and then in what order (asc or desc) both followed by a space </Message></Response>`);
+  ordu = true;
+}
+else if(ordu ==true){
+  ordu =false;
+  sort = body.split(" ")[0];
+  order = body.split(" ")[1];
+  if(statelist.includes(cnt.toUpperCase())){
+    zomato.getuscityid(city, cnt, "USA", function(bd){
+      zomato.searchrestaurant(bd, cate, range, rate, 5, sort, order, function(ppp){
+
+      res.send(`<Response><Message> `+ppp+` </Message></Response>`);
+    });
+  });
+  }
+  else{
+    zomato.getcityid(city, cnt,  function(bd){
+      zomato.searchrestaurant(bd, cate, range, rate, 5, sort, order, function(ppp){
+
+      res.send(`<Response><Message> `+ppp+` </Message></Response>`);
+    });
+    });
+  }
+}
 
 else{
   songtt=false;
