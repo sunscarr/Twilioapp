@@ -343,7 +343,7 @@ else if(ordu ==true){
 else{
   songtt=false;
 //  console.log(body.toUpperCase().split()[0]+body.toUpperCase().split()[1])
-  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies. </Message></Response>`)
+  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies, or restaurant to find restaurants in your city. </Message></Response>`)
 }
   //const twiml = new MessagingResponse();
 
