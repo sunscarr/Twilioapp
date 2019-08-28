@@ -12,6 +12,8 @@ const weather = require("./weather");
 const zomato = require("./zomato")
 const wtime = require("./worldclock");
 
+var entime =false;
+var timecountry=false;
 var ordu=false;
 var restu=false;
 var restc=false;
