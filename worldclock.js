@@ -37,7 +37,7 @@ function gettime(zone, callback){
   request(key, {json:true}, (err,res,body)=>{
     var time = body.datetime;
     var addi="";
-    var d1=body.datetime[8,10];
+    var d1=body.datetime.slice(8,10);
     var month = body.datetime[5];
     var month2 = body.datetime[6];
     var hour = body.datetime.slice(11,13);
