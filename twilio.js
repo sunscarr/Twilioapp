@@ -22,6 +22,9 @@ var ratu=false;
 var statelist=["AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MP", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UM", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
 encity=false;
 encountry=false;
+var cc="";
+var ss="";
+var ccc="";
 var cate="";
 var sort="";
 var order="";
@@ -350,24 +353,24 @@ if(body.toUpperCase().trim() == "TIME"){
 
  else if (entime==true){
    entime=false;
-   city=body;
+   cc=body;
     res.send(`<Response><Message> Enter your country (if its USA, just enter the name of the state) </Message></Response>`);
     timecountry=true;
  }
  else if (timecountry==true){
    timecountry=false;
    if(statelist.includes(body.toUpperCase())) {
-     state = body.toUpperCase();
-     cnt = "USA";
-     wtime.getzoneus(city, cnt, state, function(bd){
+     ss = body.toUpperCase();
+     ccc = "USA";
+     wtime.getzoneus(cc, ccc, ss, function(bd){
        wtime.gettime(bd, function(kk){
        res.send(`<Response><Message> `+kk+` </Message></Response>`);
      });
    });
    }
    else {
-     cnt = body;
-     wtime.getzone(city, cnt,  function(bd){
+     ccc = body;
+     wtime.getzone(cc, ccc,  function(bd){
        wtime.gettime(bd, function(kk){
        res.send(`<Response><Message> `+kk+` </Message></Response>`);
      });
