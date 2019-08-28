@@ -10,6 +10,7 @@ const exchange = require("./currency")
 const fs = require("fs");
 const weather = require("./weather");
 const zomato = require("./zomato")
+const wtime = require("./worldclock");
 
 var ordu=false;
 var restu=false;
@@ -340,10 +341,42 @@ else if(ordu ==true){
   }
 }
 
+if(body.toUpperCase().trim() == "TIME"){
+ entime=true;
+   res.send(`<Response><Message> Enter the name of the city that you want to know the current time of </Message></Response>`);
+ }
+
+ else if (entime==true){
+   entime=false;
+   city=body;
+    res.send(`<Response><Message> Enter your country (if its USA, just enter the name of the state) </Message></Response>`);
+    timecountry=true;
+ }
+ else if (timecountry==true){
+   timecountry=false;
+   if(statelist.includes(body.toUpperCase())) {
+     state = body.toUpperCase();
+     cnt = "USA";
+     wtime.getzoneus(city, cnt, state, function(bd){
+       wtime.gettime(bd, function(kk){
+       res.send(`<Response><Message> `+kk+` </Message></Response>`);
+     });
+   });
+   }
+   else {
+     cnt = body;
+     wtime.getzone(city, cnt,  function(bd){
+       wtime.gettime(bd, function(kk){
+       res.send(`<Response><Message> `+kk+` </Message></Response>`);
+     });
+   });
+   }
+ }
+
 else{
   songtt=false;
 //  console.log(body.toUpperCase().split()[0]+body.toUpperCase().split()[1])
-  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies, or restaurant to find restaurants in your city. </Message></Response>`)
+  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies, restaurant to find restaurants in your city, or time to know the current time of any place in the world </Message></Response>`)
 }
   //const twiml = new MessagingResponse();
 

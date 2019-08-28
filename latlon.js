@@ -27,7 +27,7 @@ uslonglat("San Francisco","CA","USA", function(bd){
 
 function getlonglat(city, country, callback){
   var key = baseurl+city+"&key="+latAPI;
-  console.log(key);
+//  console.log(key);
   if (country.toUpperCase()=="CHINA"){
     country = "PRC";
   }
@@ -41,13 +41,13 @@ function getlonglat(city, country, callback){
       loop2:
         for(j in bod.components){
           var com= bod.components[j];
-          console.log("search is: "+com.toUpperCase());
-          console.log("city is "+ city.toUpperCase());
-          console.log("country is "+ country.toUpperCase());
+    //      console.log("search is: "+com.toUpperCase());
+      //    console.log("city is "+ city.toUpperCase());
+        //  console.log("country is "+ country.toUpperCase());
 
           if (com.toUpperCase() == city.toUpperCase().trim() && bod.components.country.toUpperCase()== country.toUpperCase().trim()){
-            console.log("final is: "+com.toUpperCase());
-            console.log("final city is "+ city.toUpperCase());
+          //  console.log("final is: "+com.toUpperCase());
+            //console.log("final city is "+ city.toUpperCase());
              callback(bod.geometry.lat+" "+bod.geometry.lng);
             break loop1;
           }
