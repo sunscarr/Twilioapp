@@ -60,7 +60,7 @@ function gettime(zone, callback){
    addi=12;}
 
     var mwor= months[addi-1]
-    callback("The time is "+hour+mins+" and the date is "+ addi + " of "+mwor+", "+year);
+    callback("The time is "+hour+mins+" and the date is "+ mwor+" "+addi+", "+year);
   })
 }
 
