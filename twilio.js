@@ -331,7 +331,6 @@ else if(ordu ==true){
   if(statelist.includes(cnt.toUpperCase())){
     zomato.getuscityid(city, cnt, "USA", function(bd){
       zomato.searchrestaurant(bd, cate, range, rate, 5, sort, order, function(ppp){
-
       res.send(`<Response><Message> `+ppp+` </Message></Response>`);
     });
   });
@@ -346,7 +345,7 @@ else if(ordu ==true){
   }
 }
 
-if(body.toUpperCase().trim() == "TIME"){
+else if(body.toUpperCase().trim() == "TIME"){
  entime=true;
    res.send(`<Response><Message> Enter the name of the city that you want to know the current time of </Message></Response>`);
  }

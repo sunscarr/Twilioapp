@@ -65,8 +65,9 @@ function searchrestaurant(cityid, type, price, rating, no_rest, sort, sort_type,
       if(body.restaurants[i].restaurant.user_rating.aggregate_rating ==0){rat ="No ratings"}
       rlist.push("Name: "+body.restaurants[i].restaurant.name+ ". Address: "+body.restaurants[i].restaurant.location.address + ". Price range: "+ body.restaurants[i].restaurant.price_range+ ". Average user rating: "+ rat+'\n')
     }
-    console.log(rlist);
     callback(rlist);
+    console.log(rlist);
+
 });
 }
 
