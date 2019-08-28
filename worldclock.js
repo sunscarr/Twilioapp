@@ -64,6 +64,5 @@ function gettime(zone, callback){
   })
 }
 
-//gettime("Asia/Kathmandu");
 
 module.exports={gettime:gettime, getzone:getzone, getzoneus:getzoneus};
