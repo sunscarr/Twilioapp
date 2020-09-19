@@ -3,4 +3,3 @@ node_modules
 ngrok
 send-sms.js
 .env
-latlon.js
