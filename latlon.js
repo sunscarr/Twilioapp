@@ -10,6 +10,8 @@ function uslonglat(city, state, country, callback){
     for(i in body.results){
       var bod=body.results[i];
       if(bod.components._type == "city"){
+      	console.log(bod.components.state_code);
+				console.log(state);
         if(bod.components.city.toUpperCase()== city.toUpperCase().trim() && bod.components.country.toUpperCase()== country.toUpperCase().trim() && bod.components.state_code.toUpperCase()== state.toUpperCase().trim() ){
            callback(bod.geometry.lat+" "+bod.geometry.lng);
           break;

@@ -232,7 +232,7 @@ Their links are: ` + allinklist+` </Message></Response>`);
     encountry=false;
     if(statelist.includes(body.toUpperCase())) {
       state = body.toUpperCase();
-      cnt = "USA";
+      cnt = "United States of America";
       weather.findweatherus(city, cnt, state, function(bd){
         res.send(`<Response><Message> `+bd+` </Message></Response>`);
       });
