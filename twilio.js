@@ -353,7 +353,7 @@ else if(body.toUpperCase().trim() == "TIME"){
  else if (entime==true){
    entime=false;
    cc=body;
-    res.send(`<Response><Message> Enter your country (if its USA, just enter the name of the state) </Message></Response>`);
+    res.send(`<Response><Message> Enter the name of your country (if its USA, just enter the name of the state) </Message></Response>`);
     timecountry=true;
  }
  else if (timecountry==true){
@@ -380,7 +380,7 @@ else if(body.toUpperCase().trim() == "TIME"){
 else{
   songtt=false;
 //  console.log(body.toUpperCase().split()[0]+body.toUpperCase().split()[1])
-  res.send(`<Response><Message> Type weather to know the weather of your location, currency to convert currencies, restaurant to find restaurants in your city, or time to know the current time of any place in the world </Message></Response>`)
+  res.send(`<Response><Message> Type 'weather' to find the weather of your location, 'currency' to convert currencies, 'restaurant' to find restaurants in your city, or 'time' to know the current time of any place in the world </Message></Response>`)
 }
   //const twiml = new MessagingResponse();
 
