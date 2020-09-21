@@ -225,7 +225,7 @@ Their links are: ` + allinklist+` </Message></Response>`);
   else if (encity==true){
     encity=false;
     city=body;
-     res.send(`<Response><Message> Enter your country (if its USA, just enter the name of the state) </Message></Response>`);
+     res.send(`<Response><Message> Enter the name of your country (if its USA, just enter the abbreviation of the state) </Message></Response>`);
      encountry=true;
   }
   else if (encountry==true){
@@ -301,7 +301,7 @@ else if (body.toUpperCase().trim()=="RESTAURANT" || body.toUpperCase().trim()=="
 else if(restu ==true){
   city = body;
   restu=false;
-  res.send(`<Response><Message> Enter the name of the country (if its USA, just enter the name of the state) </Message></Response>`);
+  res.send(`<Response><Message> Enter the name of the country (if its USA, just enter the abbreviation of the state) </Message></Response>`);
   restc=true;
 
 }
@@ -353,7 +353,7 @@ else if(body.toUpperCase().trim() == "TIME"){
  else if (entime==true){
    entime=false;
    cc=body;
-    res.send(`<Response><Message> Enter the name of your country (if its USA, just enter the name of the state) </Message></Response>`);
+    res.send(`<Response><Message> Enter the name of your country (if its USA, just enter the abbreviation of the state) </Message></Response>`);
     timecountry=true;
  }
  else if (timecountry==true){

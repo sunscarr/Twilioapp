@@ -1,12 +1,12 @@
-var curr_API = "dfb0bdd4c972d9728308";
 var root_URL = "https://free.currconv.com/api/v7";
 const path = require("path");
 const request = require("request");
 const fs= require("fs");
 const readline = require("readline");
+const api_keys = require("./keys_api");
 
 function cur_list(callback){
-    key = root_URL+ "/currencies?apiKey="+curr_API;
+    key = root_URL+ "/currencies?apiKey="+api_keys.curr_API;
     var ll=[];
     request(key, {json:true}, (err,res,body) => {
       for (i in body.results){
@@ -18,7 +18,7 @@ function cur_list(callback){
 
 
 function find_currency(letter, callback){
-  key = root_URL+ "/currencies?apiKey="+curr_API;
+  key = root_URL+ "/currencies?apiKey="+api_keys.curr_API;
   var info="";
   request(key, {json:true}, (err,res,body) => {
     for (i in body.results){
@@ -35,7 +35,7 @@ function find_currency(letter, callback){
 
 function find_rate(from, to, amount, callback){
   var qr=from+"_"+to;
-  var key = root_URL+"/convert?q="+from+"_"+to+"&compact=ultra&apiKey="+curr_API;
+  var key = root_URL+"/convert?q="+from+"_"+to+"&compact=ultra&apiKey="+api_keys.curr_API;
   request(key, {json:true}, (err,res,body) => {
     var tot= (body[qr] * amount).toFixed(2);
     return callback(tot);

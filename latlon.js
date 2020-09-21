@@ -1,10 +1,11 @@
 const request = require("request");
 const fs = require("fs");
-const latAPI="615d9d8a27f44026931878c278b49625"
+
 const baseurl="https://api.opencagedata.com/geocode/v1/json?q="
+const api_keys = require("./keys_api");
 
 function uslonglat(city, state, country, callback){
-  var key = baseurl+city+"&key="+latAPI;
+  var key = baseurl+city+"&key="+api_keys.latAPI;
   console.log(key);
   request(key,{json:true}, (err,res,body) =>{
     for(i in body.results){
@@ -28,7 +29,7 @@ uslonglat("San Francisco","CA","USA", function(bd){
 */
 
 function getlonglat(city, country, callback){
-  var key = baseurl+city+"&key="+latAPI;
+  var key = baseurl+city+"&key="+api_keys.latAPI;
 //  console.log(key);
   if (country.toUpperCase()=="CHINA"){
     country = "PRC";

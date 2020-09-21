@@ -1,6 +1,6 @@
 const request = require("request");
 const latlon = require("./latlon");
-var timezoneapi = "5OMKHOI4E62Q";
+const api_keys = require("./keys_api");
 
 var months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -8,7 +8,7 @@ function getzone(city, country, callback){
     latlon.getlonglat(city, country, function(bb){
       lat = bb.split(" ")[0];
       long = bb.split(" ")[1];
-      var key = "http://api.timezonedb.com/v2.1/get-time-zone?key=5OMKHOI4E62Q&format=json&by=position&lat="+lat+"&lng="+long;
+      var key = "http://api.timezonedb.com/v2.1/get-time-zone?key="+api_keys.timezoneapi+"&format=json&by=position&lat="+lat+"&lng="+long;
       request(key, {json:true}, (err, res, body)=>{
         callback(body.zoneName);
       });
@@ -21,7 +21,7 @@ function getzoneus(city, country, state, callback){
     latlon.uslonglat(city, state, country, function(bb){
       lat = bb.split(" ")[0];
       long =bb.split(" ")[1];
-      var key = "http://api.timezonedb.com/v2.1/get-time-zone?key=5OMKHOI4E62Q&format=json&by=position&lat="+lat+"&lng="+long;
+      var key = "http://api.timezonedb.com/v2.1/get-time-zone?key="+api_keys.timezoneapi+"&format=json&by=position&lat="+lat+"&lng="+long;
       request(key, {json:true}, (err, res, body)=>{
         callback(body.zoneName);
       });
