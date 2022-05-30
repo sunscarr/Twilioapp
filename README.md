@@ -6,23 +6,22 @@ This is an SMS twilio application powered by an Express server that utilizes the
 
 ## Demo
 
-###
 ![](https://i.imgur.com/HroAwL8.gif)
 
-###
-<img src="https://imgur.com/6PD9WEB.gif" align="left" height="500" width="300">
+
+![](https://imgur.com/6PD9WEB.gif)
 
 ## Technologies Used
 
-Below is a list of some of the technologies used in building the application. 
-Node 
-Express
-Twilio API 
-Openweathermap API
-Themoviedb API
-Timezonedb API
-currconv API
-Heroku 
+ Below is a list of some of the technologies used in building the application. 
+- Node 
+- Express
+- Twilio API 
+- Openweathermap API
+- Themoviedb API
+- Timezonedb API
+- currconv API
+- Heroku 
 
 ## Deployment
 Uses heroku to deploy the application in its server
