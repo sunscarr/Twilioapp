@@ -1,21 +1,31 @@
 # Twilioapp
 
-This is an SMS twilio app I made using Node JS. It uses the Twilio's SMS service to  allow users to get the latest information of service requested, such as: weather and time of any places, currencies conversion, and details of movies and tv shows. It uses multiple APIs for the service and is very simple to use. You simply text the Twilio's phone number anything to get started and it will give you the instructions.
+This is an SMS twilio application powered by an Express server that utilizes the  Twilio SMS API and number of other APIs to bring you the information of service requested, such as: weather and time of any places, currencies conversion, and details of movies and tv shows. Simply text the number anything to get started with and it will give you the instructions.
 
 
-##
-Here are some examples:
+
+## Demo
 
 ###
-<img src="https://user-images.githubusercontent.com/49085384/99935682-1cc2f000-2d16-11eb-8b30-86be1b9ffcb9.jpg" align="left" height="500" width="300">
+<img src="https://i.imgur.com/HroAwL8.gif" align="left" height="500" width="300">
 
-####
-<img src="https://user-images.githubusercontent.com/49085384/99935727-3c5a1880-2d16-11eb-9804-df04005af6e9.jpg" align="left" height="500" width="300">
+###
+<img src="https://imgur.com/6PD9WEB.gif" align="left" height="500" width="300">
 
+## Technologies Used
 
-#####
-<img src="https://user-images.githubusercontent.com/49085384/99935755-4aa83480-2d16-11eb-860e-2ee1abd70b48.png" align="left" height="500" width="300">
+Below is a list of some of the technologies used in building the application. 
+Node 
+Express
+Twilio API 
+Openweathermap API
+Themoviedb API
+Timezonedb API
+currconv API
+Heroku 
 
+## Deployment
+Uses heroku to deploy the application in its server
 
 
 
