@@ -5,9 +5,9 @@ This is an SMS twilio application powered by an Express server that utilizes the
 
 ## Demo:
 <p float="right">
-<img src ="./media/media3.gif" width="300"> 
-<img src ="./media/media1.gif"width="300">
- <img src ="./media/media2.gif"width="300">
+<img src ="./media/media3.gif" width="200"> 
+<img src ="./media/media1.gif"width="200">
+ <img src ="./media/media2.gif"width="200">
 </p>
 You can try out the application by texting anything to 415-231-0784
 
