@@ -7,7 +7,7 @@ This is an SMS twilio application powered by an Express server that utilizes the
 ## Demo
 
 ###
-<img src="https://i.imgur.com/HroAwL8.gif" align="left" height="500" width="300">
+![](https://i.imgur.com/HroAwL8.gif)
 
 ###
 <img src="https://imgur.com/6PD9WEB.gif" align="left" height="500" width="300">
