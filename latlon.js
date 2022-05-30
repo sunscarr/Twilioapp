@@ -18,15 +18,10 @@ function uslonglat(city, state, country, callback){
           break;
         }
       }
-    //  console.log(body.results[i].components)
     }
   });
 }
-/*
-uslonglat("San Francisco","CA","USA", function(bd){
-  console.log(bd)
-});
-*/
+
 
 function getlonglat(city, country, callback){
   var key = baseurl+city+"&key="+api_keys.latAPI;
@@ -44,10 +39,6 @@ function getlonglat(city, country, callback){
       loop2:
         for(j in bod.components){
           var com= bod.components[j];
-    //      console.log("search is: "+com.toUpperCase());
-      //    console.log("city is "+ city.toUpperCase());
-        //  console.log("country is "+ country.toUpperCase());
-
           if (com.toUpperCase() == city.toUpperCase().trim() && bod.components.country.toUpperCase()== country.toUpperCase().trim()){
           //  console.log("final is: "+com.toUpperCase());
             //console.log("final city is "+ city.toUpperCase());
@@ -56,16 +47,9 @@ function getlonglat(city, country, callback){
           }
         }
 
-
-    //  console.log(body.results[i].components)
     }
   });
 }
 
-/*
 
-getlonglat("Kuala Lumpur","Malaysia", function(bd){
-  console.log(bd)
-});
-*/
 module.exports={uslonglat:uslonglat, getlonglat:getlonglat };

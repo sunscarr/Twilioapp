@@ -1,6 +1,5 @@
 const request = require("request");
 
-//var another = require('./sequelizes');
 const lattt= require("./latlon")
 const api_keys = require("./keys_api");
 
@@ -50,11 +49,6 @@ function findweatherus(city, country, state, callback){
 });
 });
 }
-/*
-findweatherus("Sacramento", "USA","CA", function(ww){
-  console.log("haha");
-  console.log(ww);
-});
-*/
+
 
 module.exports={findweather:findweather, findweatherus:findweatherus};

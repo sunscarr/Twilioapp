@@ -1,11 +1,7 @@
 const http = require('http');
 const express = require('express');
-//const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const bodyParser = require("body-parser");
-//const jsonfile = require('../city_list.json');
-const apiKey= 'e81fb5cb36b485a64aa97c601e1bae2f';
 const request = require("request");
-//const music = require("./musicdir");
 const exchange = require("./currency")
 const fs = require("fs");
 const weather = require("./weather");
@@ -56,172 +52,10 @@ app.post('/', async(req, res) => {
   console.log(cnt);
   var body = req.body.Body.trim();
 
-/*
-   if (body.toUpperCase().trim() == "SONGS"){
-     songtt=true;
-    res.send(`<Response><Message> What genre of songs are you looking for? Eg (Chill, Hip hop, Rock, Pop, etc)</Message></Response>`);
-  }
-  else  if (body.toUpperCase().trim() == "CHILL"){
-      res.send(`<Response><Message> Here's a good chill playlist on spotify: https://spoti.fi/2GrvKdu </Message></Response>`);
-    }
-    else if (body.toUpperCase().trim() == "HIP-HOP" || body.toUpperCase().trim() == "HIP HOP" || body.toUpperCase().trim() == "HIPHOP" ){
-      music.findAll().then(users => {
-        var arlist=[];
-        var arlinklist=[];
-        var pllist=[];
-        var pllinklist=[];
-        var allist=[];
-        var allinklist=[];
-        var pp=[];
-        var pl=[];
-        for(i in users){
-          var data = users[i].dataValues.artist;
-          if(users[i].dataValues.genre =="hip-hop"){
-            if(arlist.includes(data)){}
-            else{
-            arlist.push(data);}
-          }}
-//        console.log(arlist);}
-
-          for(i in users){
-            var data = users[i].dataValues.artist_link;
-            if(users[i].dataValues.genre =="hip-hop"){
-              if(arlinklist.includes(data)){}
-              else{
-              arlinklist.push(data);}
-            }}
-  //        console.log(arlinklist);}
-
-            for(i in users){
-              var data = users[i].dataValues.playlist;
-              if(users[i].dataValues.genre =="hip-hop"){
-                if(pllist.includes(data)){}
-                else{
-                pllist.push(data);}
-              }}
-              for(i in users){
-                var data = users[i].dataValues.playlist_link;
-                if(users[i].dataValues.genre =="hip-hop"){
-                  if(pllinklist.includes(data)){}
-                  else{
-                  pllinklist.push(data);}
-                }}
-                for(i in users){
-                  var data = users[i].dataValues.album;
-                  if(users[i].dataValues.genre =="hip-hop"){
-                    allist.push( " "+data);
-                  }}
-                  for(i in users){
-                    var data = users[i].dataValues.album_link;
-                    if(users[i].dataValues.genre =="hip-hop"){
-
-                      allinklist.push(" "+data);
-                    }}
-
-    //    arlist.split(",").join(', ')
-            res.send(`<Response><Message> Here's Rap Caviar playlist on spotify that you might like:
-https://spoti.fi/30NDDBE.
-You might also like the artist(s):  `+ arlist +`. Here's their artist link if you want to explore: `+ arlinklist +` and their playlist "`+ pllist +`": `+ pllinklist +
-` Some of their popular albums include: ` + allist + `.
-Their links are: ` + allinklist+` </Message></Response>`);
-
-  });
-}
-    else if (body.toUpperCase().trim() == "ROCK" || body.toUpperCase().trim() == "ROCKS"  ){
-      res.send(`<Response><Message> Here's a Classic Rock playlist for you: https://spoti.fi/2JNK6H2 </Message></Response>`);
-    }
-    else if (body.toUpperCase().trim() == "POP"  ){
-      music.findAll().then(users => {
-        var arlist=[];
-        var arlinklist=[];
-        var pllist=[];
-        var pllinklist=[];
-        var allist=[];
-        var allinklist=[];
-        for(i in users){
-          var data = users[i].dataValues.artist;
-          if(users[i].dataValues.genre =="pop"){
-            if(arlist.includes(data)){}
-            else{
-            arlist.push(data);}
-          }}
-//        console.log(arlist);}
-
-          for(i in users){
-            var data = users[i].dataValues.artist_link;
-            if(users[i].dataValues.genre =="pop"){
-              if(arlinklist.includes(data)){}
-              else{
-              arlinklist.push(data);}
-            }}
-  //        console.log(arlinklist);}
-
-            for(i in users){
-              var data = users[i].dataValues.playlist;
-              if(users[i].dataValues.genre =="pop"){
-                if(pllist.includes(data)){}
-                else{
-                pllist.push(data);}
-              }}
-              for(i in users){
-                var data = users[i].dataValues.playlist_link;
-                if(users[i].dataValues.genre =="pop"){
-                  if(pllinklist.includes(data)){}
-                  else{
-                  pllinklist.push(data);}
-                }}
-                for(i in users){
-                  var data = users[i].dataValues.album;
-                  if(users[i].dataValues.genre =="pop"){
-
-                    allist.push(" "+ data);
-                  }}
-                  for(i in users){
-                    var data = users[i].dataValues.album_link;
-                    if(users[i].dataValues.genre =="pop"){
-
-                      allinklist.push(" " +data);
-                    }}
-
-    //    arlist.split(",").join(', ')
-            res.send(`<Response><Message> Here's Today's Top Hits playlist for you:
-https://spoti.fi/2K4KZdv
-You might also like the artist(s):  `+ arlist +`. Here's their artist link if you want to explore: `+ arlinklist +` and their playlist "`+ pllist +`": `+ pllinklist +
-` Some of their popular albums include: ` + allist + `.
-Their links are: ` + allinklist+` </Message></Response>`);
-
-});
-}
-    else if (body.toUpperCase().trim() == "COUNTRY"  && songtt==true){
-      res.send(`<Response><Message> Here's Hot Country Hits playlist for you: https://spoti.fi/2JR6K1v   </Message></Response>`);
-    }
-
-    */
  if(body.toUpperCase().trim() == "WEATHER"){
   encity=true;
     res.send(`<Response><Message> Enter the name of the city </Message></Response>`);
   }
-  /*
-  else if(cnt.length > 0 && city.length >0){
-    var id="";
-    for(var i=0; i<jsonfile.length; i++){
-    var fir = jsonfile[i];
-    if(fir.name.toUpperCase() == city.toUpperCase() && fir.country.toUpperCase() == cnt.toUpperCase()){
-    	id= (jsonfile[i].id);
-    	break;
-    }}
-    var key = "http://api.openweathermap.org/data/2.5/weather?id="+id+"&APPID="+apiKey;
-    city="";
-    cnt="";
-    request(key, {json:true}, (err,response,body) => {
-			if (err){return console.log(err);}
-			var temperature = ((body.main.temp)-273.15)*(9/5)+32;
-			var des = (body.weather[0].description);
-			res.send(`<Response><Message>The temperature is: `+ Number(temperature.toFixed(1))+`F. The weather is `+ des +`</Message></Response>`);
-
-  });
-}
-*/
   else if (encity==true){
     encity=false;
     city=body;
@@ -245,29 +79,7 @@ Their links are: ` + allinklist+` </Message></Response>`);
     }
   }
 
-/*
-  else if(cnt_list.includes(body.toUpperCase() )){
-    cnt=body;
-    if (city.length >0){
-    res.send(`<Response><Message> Type ok </Message></Response>`);
-  }
 
-  else{
-      res.send(`<Response><Message> Enter your city </Message></Response>`);
-  }
-}
-  else if(city_list.includes(body.toUpperCase())){
-    city=body;
-    if(cnt.length >0){
-      res.send(`<Response><Message> Type ok </Message></Response>`);
-    }
-    else{
-    res.send(`<Response><Message> Enter your country code </Message></Response>`);
-  }
-}
-
-
-*/
 else if(body.toUpperCase().trim()=="CURRENCY"){
   res.send(`<Response><Message> Enter the name of the currency you want to convert from, the currency you want to convert to, and the amount you want to convert, all followed by a space. If you don't know the name of your currencies, enter 'CN'</Message></Response>`);
   }
@@ -382,16 +194,7 @@ else{
 //  console.log(body.toUpperCase().split()[0]+body.toUpperCase().split()[1])
   res.send(`<Response><Message> Type 'weather' to find the weather of your location, 'currency' to convert currencies, 'restaurant' to find restaurants in your city, or 'time' to know the current time of any place in the world </Message></Response>`)
 }
-  //const twiml = new MessagingResponse();
 
-//  twiml.message('The Robots are coming! Head for the hills!');
+});
 
-//  res.writeHead(200, {'Content-Type': 'text/xml'});
-//  res.end(twiml.toString());
-});
-/*
-http.createServer(app).listen(1337, () => {
-  console.log('Express server listening on port 1337');
-});
-*/
 app.listen(process.env.PORT || 1337, () => console.log("listening"));

@@ -23,11 +23,6 @@ request({
 }
 
 
-//getuscityid("San Francisco", "CA", "USA", function(res) {
-  //console.log(res);
-///});
-
-
 function getcityid(city, country, callback){
 latlon.getlonglat(city, country, function(bb){
   lat = bb.split(" ")[0];
@@ -44,10 +39,6 @@ request({
 });
 }
 
-
-//getcityid("Kathmandu", "Nepal", function(res) {
-//  console.log(res);
-//});
 
 
 
@@ -72,10 +63,5 @@ function searchrestaurant(cityid, type, price, rating, no_rest, sort, sort_type,
 });
 }
 
-/*
-searchrestaurant(306, "Indian", 1, "3", 5, "cost", "asc", function(res){
-  console.log(res);
-});
-*/
 
 module.exports={getuscityid:getuscityid, getcityid:getcityid, searchrestaurant:searchrestaurant};

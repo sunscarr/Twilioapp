@@ -28,8 +28,6 @@ function getzoneus(city, country, state, callback){
 });
 }
 
-//getzone("Kathmandu", "Nepal");
-//getzoneus("Hayward", "USA", "CA");
 
 
 function gettime(zone, callback){
