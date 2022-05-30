@@ -3,13 +3,8 @@
 This is an SMS twilio application powered by an Express server that utilizes the  Twilio SMS API and number of other APIs to bring you the information of service requested, such as: weather and time of any places, currencies conversion, and details of movies and tv shows. Simply text the number anything to get started with and it will give you the instructions.
 
 
-
 ## Demo
 
-![](https://i.imgur.com/HroAwL8.gif)
-
-
-![](https://imgur.com/6PD9WEB.gif)
 
 ## Technologies Used
 
